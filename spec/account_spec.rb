@@ -26,36 +26,36 @@ describe Account do
       expect(subject.balance).to be(250)
     end
   end
-  context '#history' do
+  context '#account_history' do
     context 'deposits' do
       it 'stores deposit amounts' do
         subject.deposit(100)
-        expect(subject.history.first.has_value?(100)).to be true
+        expect(subject.account_history.first.has_value?(100)).to be true
       end
       it 'stores the dates a deposit was made on' do
         subject.deposit(100)
-        expect(subject.history.first.has_key?(Date.today)).to be true
+        expect(subject.account_history.first.has_key?(Date.today)).to be true
       end
       it 'stores multiple deposits' do
         subject.deposit(100)
         subject.deposit(500)
-        expect(subject.history[0].has_value?(100) && subject.history[1].has_value?(500)).to be true
+        expect(subject.account_history[0].has_value?(100) && subject.account_history[1].has_value?(500)).to be true
       end
     end
     context 'withdrawals' do
       it 'stores withdrawal amounts' do
         subject.withdraw(100)
-        expect(subject.history.first.has_value?(-100)).to be true
+        expect(subject.account_history.first.has_value?(-100)).to be true
       end
       it 'stores the dates a withdrawal was made on' do
         subject.withdraw(100)
-        expect(subject.history.first.has_key?(Date.today)).to be true
+        expect(subject.account_history.first.has_key?(Date.today)).to be true
       end
       it 'stores multiple withdrawals' do
         subject.deposit(1000)
         subject.withdraw(100)
         subject.withdraw(500)
-        expect(subject.history[1].has_value?(-100) && subject.history[2].has_value?(-500)).to be true
+        expect(subject.account_history[1].has_value?(-100) && subject.account_history[2].has_value?(-500)).to be true
       end
     end
   end
