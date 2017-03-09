@@ -19,25 +19,28 @@ module TerminalPrint
   private
 
   def self.print_balance(col_width, balance)
-    puts (" " * spaces(col_width, balance)) + stringify_amount(balance) + " "
+    balance = stringify_amount(balance)
+    puts (" " * spaces(col_width, balance)) + balance + " "
   end
 
   def self.print_date(col_width, date)
-    print date + (" " * (spaces(col_width,date) + 1)) + " ||"
+    print date + (" " * spaces(col_width,date)) + " ||"
   end
 
   def self.print_amount(col_width, amount)
     if amount > 0
-      print (" " * spaces(col_width,amount)) + stringify_amount(amount) + " ||"
+      amount = stringify_amount(amount)
+      print (" " * spaces(col_width,amount)) + amount + " ||"
       print (" " * col_width) + " ||"
     else
+      amount = stringify_amount(amount)
       print (" " * col_width) + " ||"
-      print (" " * spaces(col_width,amount)) + stringify_amount(amount) + " ||"
+      print (" " * spaces(col_width,amount)) + amount + " ||"
     end
   end
 
   def self.stringify_amount(amount)
-    "%.2f" % (amount / 1.0)
+    "%.2f" % (amount.abs / 1.0)
   end
 
   def self.stringify_date(date)
@@ -45,7 +48,7 @@ module TerminalPrint
   end
 
   def self.spaces(col_width, value)
-    (col_width - value.to_s.length) - 1
+    col_width - value.to_s.length
   end
 
 end
