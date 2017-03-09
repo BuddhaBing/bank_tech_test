@@ -9,5 +9,8 @@ describe Account do
     it 'adds to the balance when a deposit is made' do
       expect{subject.deposit(100)}.to change{subject.balance}.by(100)
     end
+    it 'deducts from the balance when a withdrawal is made' do
+      expect{subject.withdraw(50)}.to change{subject.balance}.by(-50)
+    end
   end
 end
