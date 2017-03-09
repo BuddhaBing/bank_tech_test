@@ -13,4 +13,10 @@ describe Account do
       expect{subject.withdraw(50)}.to change{subject.balance}.by(-50)
     end
   end
+  context '#history' do
+    it 'stores deposit amounts and the dates they were made on' do
+      subject.deposit(100)
+      expect(subject.history.keys).to contain(Date.today)
+    end
+  end
 end
