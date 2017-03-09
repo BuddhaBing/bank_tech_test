@@ -3,7 +3,6 @@ module TerminalPrint
   def self.statement(history)
     balance = 0
     col_width = 10
-    puts "\n\n\n"
     puts "date       ||  credit   ||   debit   ||  balance  "
     history.each do |transaction|
       transaction.each do |date, amount|

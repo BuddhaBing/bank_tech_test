@@ -22,12 +22,14 @@ class Account
     @balance -= amount
   end
 
-  def log_transaction(date, amount)
-    @account_history << { date => amount }
-  end
-
   def statement
     @printer.statement(@account_history)
+  end
+
+  private
+
+  def log_transaction(date, amount)
+    @account_history << { date => amount }
   end
 
 end
