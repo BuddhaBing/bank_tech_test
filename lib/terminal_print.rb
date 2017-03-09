@@ -4,7 +4,7 @@ module TerminalPrint
     balance = 0
     col_width = 10
     puts "date       ||  credit   ||   debit   ||  balance  "
-    history.each do |transaction|
+    history.reverse.each do |transaction|
       transaction.each do |date, amount|
         balance += amount
         date = stringify_date(date) unless date.is_a? String
