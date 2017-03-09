@@ -8,7 +8,7 @@ module TerminalPrint
     history.each do |transaction|
       transaction.each do |date, amount|
         balance += amount
-        date = stringify_date(date)
+        date = stringify_date(date) unless date.is_a? String
         print_date(col_width, date)
         print_amount(col_width, amount)
         print_balance(col_width, balance)
