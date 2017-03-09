@@ -1,4 +1,5 @@
 require 'date'
+require_relative 'terminal_print'
 
 class Account
 
