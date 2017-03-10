@@ -1,8 +1,16 @@
-# Bank tech test
+# Bank Tech Test
 
-## Makers Academy Week 10 - Solo Practice Tech Test
+[![codecov](https://codecov.io/gh/treborb/bank_tech_test/branch/master/graph/badge.svg)](https://codecov.io/gh/treborb/bank_tech_test)
 
-### Requirements
+#### Ruby v2.3.3
+### [Makers Academy] (http://www.makersacademy.com) - Week 10 Solo Practice Tech Test
+
+## Index
+* [Installation] (#Install)
+* [Rspec Tests] (#Rspec)
+* [Usage] (#Usage)
+
+## The brief
 
 * You should be able to interact with the your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
 * Deposits, withdrawal.
@@ -23,17 +31,33 @@ date       || credit || debit   || balance
 13/01/2012 || 2000.00||         || 3000.00
 10/01/2012 || 1000.00||         || 1000.00
 ```
-### Usage example
+## <a id="Install">Installation</a>
 ```
 $ git clone https://github.com/treborb/bank_tech_test.git
 $ cd bank_tech_test
+$ rvm 2.3.3
 $ gem install bundler
 $ bundle
+```
+## <a id="Usage">Usage</a>
+
+#### Load up your favourite REPL (e.g. irb)
+
+```
 $ irb
+```
+
+#### In the REPL
+```ruby
 $ require './lib/account'
 $ account = Account.new
 $ account.deposit("10/01/2012",1000)
 $ account.deposit("13/01/2012",2000)
 $ account.withdraw("14/01/2012",500)
 $ account.statement
+```
+
+## <a id=“Tests">Running the tests</a>
+```ruby
+$ rspec
 ```

@@ -6,4 +6,4 @@ gem "rspec"
 gem "pry", require: false
 gem "byebug", require: false
 gem "pry-byebug", require: false
-gem "terminal-table"
+gem 'codecov', :require => false, :group => :test
