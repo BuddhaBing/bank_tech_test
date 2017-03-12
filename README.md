@@ -3,13 +3,16 @@
 [![Build Status](https://travis-ci.org/treborb/bank_tech_test.svg?branch=master)](https://travis-ci.org/treborb/bank_tech_test)
 [![codecov](https://codecov.io/gh/treborb/bank_tech_test/branch/master/graph/badge.svg)](https://codecov.io/gh/treborb/bank_tech_test)
 
-#### Ruby v2.3.3
 ### [Makers Academy] (http://www.makersacademy.com) - Week 10 Solo Practice Tech Test
 
-## Index
-* [Installation] (#Install)
-* [Rspec Tests] (#Rspec)
-* [Usage] (#Usage)
+## Technologies
+* [Ruby v2.3.3](https://www.ruby-lang.org/en/)
+* [Rspec](http://rspec.info/)
+
+## Jump To
+* [Installation](#install)
+* [Usage](#usage)
+* [Tests](#tests)
 
 ## The brief
 
@@ -32,7 +35,9 @@ date       || credit || debit   || balance
 13/01/2012 || 2000.00||         || 3000.00
 10/01/2012 || 1000.00||         || 1000.00
 ```
-## <a id="Install">Installation</a>
+
+## <a name="install">Installation</a>
+
 ```
 $ git clone https://github.com/treborb/bank_tech_test.git
 $ cd bank_tech_test
@@ -40,7 +45,8 @@ $ rvm 2.3.3
 $ gem install bundler
 $ bundle
 ```
-## <a id="Usage">Usage</a>
+
+## <a name="usage">Usage</a>
 
 #### Load up your favourite REPL (e.g. irb)
 
@@ -58,7 +64,8 @@ $ account.withdraw("14/01/2012",500)
 $ account.statement
 ```
 
-## <a id=“Tests">Running the tests</a>
+## <a name="tests">Running the tests</a>
+
 ```ruby
 $ rspec
 ```
